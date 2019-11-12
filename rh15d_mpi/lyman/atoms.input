@@ -4,7 +4,7 @@
 # Metals
 #  model file             ACTIVE/PASSIVE  INITIAL_SOLUTION   population file
 
- Atoms/H_6.atom              ACTIVE         ZERO_RADIATION   output/output_aux.ncdf
+ Atoms/H_6.atom              ACTIVE         OLD_POPULATIONS   output/output_aux.ncdf
 #  Atoms/H_6.atom              ACTIVE        ZERO_RADIATION
   Atoms/He.atom               PASSIVE       LTE_POPULATIONS
   Atoms/C.atom                PASSIVE       LTE_POPULATIONS
