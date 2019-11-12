@@ -113,7 +113,12 @@ void Iterate_p(int NmaxIter, double iterLimit)
     sprintf(messageStr, "\n -- Iteration %3d, switch = %.2f, prd switch = %.2f\n",
 	    niter, cswitch, input.prdswitch);
     Error(MESSAGE, routineName, messageStr);
-    dpopsmax = updatePopulations(niter);
+    switch(atom->initial_solution){
+	case OLD_POPULATIONS:
+	  dpopsmax = 1e-3;
+	  break;
+	default: dpopsmax = updatePopulations(niter);
+    }
     if (mpi.stop) return;
 
     if (atmos.NPRDactive > 0) {

@@ -372,7 +372,7 @@ void init_aux_old(void) {
 
   /* --- Consistency checks --- */
   /* Check that atmosID is the same */
-  if ((ierror = nc_inq_attlen(io.aux_ncid, NC_GLOBAL, "atmosID", &len_id ))) 
+ /* if ((ierror = nc_inq_attlen(io.aux_ncid, NC_GLOBAL, "atmosID", &len_id ))) 
     ERR(ierror,routineName);
 
   atmosID = (char *) malloc(len_id+1);
@@ -387,7 +387,7 @@ void init_aux_old(void) {
     Error(WARNING, routineName, messageStr);
     }
   free(atmosID);
-
+*/
   /* Check that dimension sizes match 
   if ((ierror = nc_inq_dimid(io.aux_ncid, "nz", &dimid ))) 
     ERR(ierror,routineName);  
@@ -974,7 +974,7 @@ void readPopulations(Atom *atom) {
 
   /* --- Consistency checks --- */
   /* Check that atmosID is the same */
-  if ((ierror = nc_inq_attlen(io.aux_ncid, NC_GLOBAL, "atmosID", &len_id ))) 
+  /*if ((ierror = nc_inq_attlen(io.aux_ncid, NC_GLOBAL, "atmosID", &len_id ))) 
     ERR(ierror,routineName);
 
   atmosID = (char *) malloc(len_id+1);
@@ -989,7 +989,7 @@ void readPopulations(Atom *atom) {
     Error(WARNING, routineName, messageStr);
     }
   free(atmosID);
-
+*/
   /* Check that dimension sizes match */
   if ((ierror = nc_inq_dimid(ncid, "nlevel", &dimid ))) 
     ERR(ierror,routineName);  
@@ -1154,7 +1154,7 @@ void readMolPops(Molecule *molecule) {
 /* ------- end   -------------------------- readMolPops_p.c -- */
 
 /* ------- begin -------------------------- readRadRates_p.c   --- */
-bool_t readRadRate(Atom *atom) {
+bool_t readRadRates(Atom *atom) {
   const char routineName[] = "readRadRates_p";
   char    group_name[ARR_STRLEN], *atmosID;
 
@@ -1273,7 +1273,7 @@ bool_t readRadRate(Atom *atom) {
 /* ------- end   -------------------------- readRadRates_p.c   --- */
 
 /* ------- begin -------------------------- readCollRates_p.c  --- */
-void readCollRates_p(Atom *atom) {
+void readCollRates(Atom *atom) {
   const char routineName[] = "readCollRates_p";
   char    group_name[ARR_STRLEN], *atmosID;
 
