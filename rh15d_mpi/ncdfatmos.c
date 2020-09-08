@@ -287,7 +287,7 @@ void readAtmos_ncdf(int xi, int yi, Atmosphere *atmos, Geometry *geometry,
     ERR(ierror,routineName);
   /* vturb, if available */
   if (infile->vturb_varid != -1) {
-    if ((ierror = nc_get_vara_double(ncid, infile->vturb_varid, &start[3], &count[3],
+    if ((ierror = nc_get_vara_double(ncid, infile->vturb_varid, start, count,
 				     atmos->vturb))) ERR(ierror,routineName);
   }
 
